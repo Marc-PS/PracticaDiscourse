@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddTopicViewController" customModule="DiscourseAPI" customModuleProvider="target">
+            <connections>
+                <outlet property="addTopicText" destination="vkN-hx-Csb" id="C89-cM-49m"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WoS-Jv-xNX"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert new topic title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vkN-hx-Csb">
+                    <rect key="frame" x="20" y="213" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLB-kh-Ouz">
+                    <rect key="frame" x="20" y="316" width="374" height="30"/>
+                    <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="Hhc-SX-jHw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="nLB-kh-Ouz" firstAttribute="top" secondItem="vkN-hx-Csb" secondAttribute="bottom" constant="69" id="51v-N5-Y2F"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vkN-hx-Csb" secondAttribute="trailing" constant="20" id="73g-hN-LC4"/>
+                <constraint firstItem="vkN-hx-Csb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Bap-e7-p9g"/>
+                <constraint firstItem="nLB-kh-Ouz" firstAttribute="trailing" secondItem="vkN-hx-Csb" secondAttribute="trailing" id="SMp-XZ-sah"/>
+                <constraint firstItem="vkN-hx-Csb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="169" id="hbs-pH-4Lu"/>
+                <constraint firstItem="nLB-kh-Ouz" firstAttribute="leading" secondItem="vkN-hx-Csb" secondAttribute="leading" id="zPk-1h-fuS"/>
+            </constraints>
+            <point key="canvasLocation" x="48" y="120"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

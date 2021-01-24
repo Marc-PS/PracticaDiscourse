@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4A98A9CB-A9F2-41E1-BADC-835C72AAE34F"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD598190-8193-4286-B010-72DBEED6DD62"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Users/UsersViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewWasLoaded()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD598190-8193-4286-B010-72DBEED6DD62 - 35b0255de78ed761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.UsersViewModel.viewWasLoaded() -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/Users/UsersViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "22">
+               </Location>
+               <Location
+                  uuid = "CD598190-8193-4286-B010-72DBEED6DD62 - 37a5541908974ecd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;DiscourseAPI.UsersResponse&gt;, Swift.Error&gt;) -&gt; () in DiscourseAPI.UsersViewModel.viewWasLoaded() -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/Users/UsersViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5CA961B-0C62-46F2-A800-8E749B8F7960"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Categories/CategoriesViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewWasLoaded()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C5CA961B-0C62-46F2-A800-8E749B8F7960 - 1e18043bee33a8c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.CategoriesViewModel.viewWasLoaded() -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/Categories/CategoriesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  uuid = "C5CA961B-0C62-46F2-A800-8E749B8F7960 - 17ccbd8c68f056b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;DiscourseAPI.CategoriesResponse&gt;, Swift.Error&gt;) -&gt; () in DiscourseAPI.CategoriesViewModel.viewWasLoaded() -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/Categories/CategoriesViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "71">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1BB6C28B-4E30-400D-9A3E-C735D6771987"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/DataManager/Remote/DiscourseAPIRemoteDataManagerImpl.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "DiscourseAPIRemoteDataManagerImpl"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "session"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - 3adf7886e14e01e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.SessionAPI.session.getter : __C.NSURLSession"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "197">
+               </Location>
+               <Location
+                  uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - 80270503fe5f2195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.SessionAPI.session.setter : __C.NSURLSession"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "147">
+               </Location>
+               <Location
+                  uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - 34ddb14398942750"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.NSURLSession in DiscourseAPI.SessionAPI.session.getter : __C.NSURLSession"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - eff4605999250858"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.SessionAPI.init() -&gt; DiscourseAPI.SessionAPI"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E5923EF0-0231-441E-AEFF-F65CFB7DB642"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/DataManager/Remote/SessionAPI.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "session"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "497D7393-8BEE-4CED-AFF3-F7A9A9BD99B1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7156472C-9F92-43C0-823F-E0F089FBC1EE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50B6AC6A-E31A-4895-9B01-B8ACE0CD35DF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8E4B3ED-4229-48E6-AE6E-5D9FEF2E22CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F91CCCF-C30B-4C22-96FD-1B7AF2EF18C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D5ED98E-CDBD-467C-B423-DCB7A483B6C1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97F1384A-1526-4FB1-9623-2DA54749251D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3234DED6-3195-4D69-8666-224369F4732E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "submitNewTopic(title:raw:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3234DED6-3195-4D69-8666-224369F4732E - b9f3f8cfd6641a5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiscourseAPI.AddTopicViewModel.submitNewTopic(title: Swift.String, raw: Swift.String) -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/AddTopic/AddTopicViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "3234DED6-3195-4D69-8666-224369F4732E - bf6abf588e5d9162"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Optional&lt;DiscourseAPI.AddNewTopicResponse&gt;, Swift.Error&gt;) -&gt; () in DiscourseAPI.AddTopicViewModel.submitNewTopic(title: Swift.String, raw: Swift.String) -&gt; ()"
+                  moduleName = "DiscourseAPI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcps/Desktop/Proyectos/DiscourseAPI/DiscourseAPI/AddTopic/AddTopicViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "129">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "604FBFAB-B3F3-4E8E-9664-7B1BD324FEE9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "submitNewTopic(title:raw:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D3200B2-B89F-4B67-8CFC-4CEEB4925B0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "submitNewTopic(title:raw:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
