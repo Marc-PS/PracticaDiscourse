@@ -50,33 +50,25 @@ class DiscourseAPIRemoteDataManagerImpl: DiscourseAPIRemoteDataManager {
         }
     }
     
-    func fetchUsers(completion: @escaping (Result<UserListResponse?, Error>) -> ()) {
-        let request = UserListRequest()
-        session.send(request: request) { result in
+    func fetchAllUsers(completion: @escaping (Result<UsersResponse?, Error>) -> ()) {
+        let request = UsersRequest()
+        session.send(request: request) { (result) in
             completion(result)
         }
     }
     
-    func fetchSingleUser(userName: String, completion: @escaping (Result<SingleUserResponse?, Error>) -> ()) {
-    
-        let request = SingleUserRequest(userName: userName)
-        session.send(request: request) { result in
+    func fetchUser(username: String, completion: @escaping (Result<UserResponse?, Error>) -> ()) {
+        let request = UserRequest(username: username)
+        session.send(request: request) { (result) in
             completion(result)
         }
     }
     
-    func updateUser(nameUser: String, newName: String, completion: @escaping (Result<SingleUserResponse?, Error>) -> ()) {
-        let request = UpdateUserRequest(nameUser: nameUser, newName: newName)
-        session.send(request: request) { result in
+    func updateUserName(username: String, name: String, completion: @escaping (Result<UpdateUserNameResponse?, Error>) -> ()) {
+        let request = UpdateUserNameRequest(username: username, name: name)
+        session.send(request: request) { (result) in
             completion(result)
         }
-    }
-    
-    func fetchUserImage(imageURL: String, completion: @escaping (UIImage) -> ()) {
-        let  request = UserImageRequest(imageURL: imageURL)
-        guard let url = request.requestWithBaseURL().url else {return}
-        
-        self.session.fetchImage(imageURL: url, completion: completion)
     }
     
 

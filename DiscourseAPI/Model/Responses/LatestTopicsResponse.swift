@@ -64,3 +64,29 @@ struct Topic: Codable {
     }
 }
 
+struct User: Codable {
+
+    let id: Int
+
+    let username: String
+
+    let name: String?
+
+    let avatarTemplate: String
+
+
+
+    enum CodingKeys: String, CodingKey {
+
+        case id
+
+        case username
+
+        case name
+
+        case avatarTemplate = "avatar_template"
+
+    }
+
+}
+

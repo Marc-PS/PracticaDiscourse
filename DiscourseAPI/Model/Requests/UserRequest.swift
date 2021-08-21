@@ -7,34 +7,32 @@
 
 import Foundation
 
-struct SingleUserRequest: APIRequest {
-   
-    typealias Response = SingleUserResponse
-    
-    let userName: String
-    
-    init(userName: String) {
-        self.userName = userName
+class UserRequest: APIRequest {
+    typealias Response = UserResponse
+
+    let username: String
+
+    init(username: String) {
+        self.username = username
     }
-    
+
     var method: Method {
         return .GET
     }
-    
+
     var path: String {
-        return "/users/\(userName).json"
+        return "/users/\(username).json"
     }
-    
+
     var parameters: [String : String] {
         return [:]
     }
-    
+
     var body: [String : Any] {
         return [:]
     }
-    
+
     var headers: [String : String] {
         return [:]
     }
-
 }

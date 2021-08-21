@@ -49,22 +49,19 @@ extension DiscourseAPIDataManager: CategoriesDataManager {
 }
 
 extension DiscourseAPIDataManager: UsersDataManager {
-    
-    func fetchUsers(completion: @escaping (Result<UserListResponse?, Error>) -> ()) {
-        remoteDataManager.fetchUsers(completion: completion)
+    func fetchAllUsers(completion: @escaping (Result<UsersResponse?, Error>) -> ()) {
+        remoteDataManager.fetchAllUsers(completion: completion)
     }
-    
-    func fetchUser(userName: String, completion: @escaping (Result<SingleUserResponse?, Error>) -> ()) {
-        remoteDataManager.fetchSingleUser(userName: userName, completion: completion)
-    }
-    
-    func updateUser(user nameUser: String, newName: String, completion: @escaping (Result<SingleUserResponse?, Error>) -> ()) {
-        remoteDataManager.updateUser(nameUser: nameUser, newName: newName, completion: completion)
 
+}
+
+extension DiscourseAPIDataManager: UserDataManager {
+    func fetchUser(username: String, completion: @escaping (Result<UserResponse?, Error>) -> ()) {
+        remoteDataManager.fetchUser(username: username, completion: completion)
     }
-    
-    func fetchUserImage(imageURL: String, completion: @escaping (UIImage) -> ()) {
-        remoteDataManager.fetchUserImage(imageURL: imageURL, completion: completion)
+
+    func updateUserName(username: String, name: String, completion: @escaping (Result<UpdateUserNameResponse?, Error>) -> ()) {
+        remoteDataManager.updateUserName(username: username, name: name, completion: completion)
     }
 
 }

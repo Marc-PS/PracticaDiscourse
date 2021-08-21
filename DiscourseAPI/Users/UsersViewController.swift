@@ -15,15 +15,14 @@ class UsersViewController: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
-        table.estimatedRowHeight = 100
-        table.rowHeight = UITableView.automaticDimension
+        
         return table
     }()
 
     let viewModel: UsersViewModel
 
-    init(viewModel: UsersViewModel) {
-        self.viewModel = viewModel
+    init(usersViewModel: UsersViewModel) {
+        self.viewModel = usersViewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -32,21 +31,21 @@ class UsersViewController: UIViewController {
     }
 
     override func loadView() {
-        view = UIView()
+        super.loadView()
 
-        view.addSubview(tableView)
+        self.view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
-            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewWasLoaded()
+        viewModel.fetchUsers()
     }
 
 
@@ -57,33 +56,36 @@ class UsersViewController: UIViewController {
 }
 
 extension UsersViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(in: section)
+        return viewModel.numberOfUsers()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? UserCell,
-           let cellViewModel = self.viewModel.viewModel(index: indexPath.row) {
+           let cellViewModel = self.viewModel.viewModel(at: indexPath) {
             cell.viewModel = cellViewModel
             return cell
         }
 
-        fatalError()
+        return UITableViewCell()
     }
 }
 
 extension UsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectUser(index: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.didSelectRow(at: indexPath)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
+    
 }
 
-extension UsersViewController: UsersViewDelegate {
-    func usersFetched() {
+extension UsersViewController: UsersViewModelViewDelegate {
+    func usersWereFetched() {
         tableView.reloadData()
     }
 

@@ -7,28 +7,26 @@
 
 import Foundation
 
-struct UserListRequest: APIRequest {
-   
-    typealias Response = UserListResponse
-    
+class UsersRequest: APIRequest {
+    typealias Response = UsersResponse
+
     var method: Method {
         return .GET
     }
-    //Elijo mensual para que salgamos los compañeros del bootcamp
+
     var path: String {
-        return "/directory_items.json?period=all&order=topic_count"
+        return "/directory_items.json"
     }
-    
+
     var parameters: [String : String] {
-        return [:]
+        return ["period": "all"]
     }
-    
+
     var body: [String : Any] {
         return [:]
     }
-    
+
     var headers: [String : String] {
         return [:]
     }
-
 }

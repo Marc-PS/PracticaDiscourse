@@ -7,27 +7,31 @@
 
 import Foundation
 
-protocol UsersCoordinatorDelegate: AnyObject {
-    func didSelect(user: User)
+protocol UsersViewModelCoordinatorDelegate: AnyObject {
+    func didSelect(username: String)
 }
 
-protocol UsersViewDelegate: AnyObject {
-    func usersFetched()
+protocol UsersViewModelViewDelegate: AnyObject {
+    func usersWereFetched()
     func errorFetchingUsers()
 }
 
 class UsersViewModel {
-    weak var coordinatorDelegate: UsersCoordinatorDelegate?
-    weak var viewDelegate: UsersViewDelegate?
-    let usersDataManager: UsersDataManager
+    weak var coordinatorDelegate: UsersViewModelCoordinatorDelegate?
+    weak var viewDelegate: UsersViewModelViewDelegate?
+    var usersDataManager: UsersDataManager
     var userViewModels: [UserCellViewModel] = []
     
     init(usersDataManager: UsersDataManager) {
         self.usersDataManager = usersDataManager
     }
     
-    func viewWasLoaded() {
-        usersDataManager.fetchUsers { (result) in
+    func numberOfUsers() -> Int {
+        return userViewModels.count
+    }
+    
+    func fetchUsers() {
+        usersDataManager.fetchAllUsers { (result) in
             switch result {
                 case .success(let response):
                     
@@ -36,10 +40,10 @@ class UsersViewModel {
                     })
                     
                     for user in fetchedUsers{
-                        self.userViewModels.append(UserCellViewModel(user: user, userAvatar: user.avatarTemplate, userUsername: user.username, userName: user.name))
+                        self.userViewModels.append(UserCellViewModel(user: user))
                     }
                     
-                    self.viewDelegate?.usersFetched()
+                    self.viewDelegate?.usersWereFetched()
                     
                 case .failure:
                     self.viewDelegate?.errorFetchingUsers()
@@ -47,22 +51,22 @@ class UsersViewModel {
         }
     }
     
+    
     func numberOfSections() -> Int {
         return 1
     }
-    
+
     func numberOfRows(in section: Int) -> Int {
         return userViewModels.count
     }
-    
-    func viewModel(index: Int) -> UserCellViewModel? {
-        guard index < userViewModels.count else { return nil }
-        return userViewModels[index]
+
+    func viewModel(at indexPath: IndexPath) -> UserCellViewModel? {
+        guard indexPath.row < userViewModels.count else { return nil }
+        return userViewModels[indexPath.row]
     }
-    
-    func didSelectUser(index: Int){
-        let user = self.userViewModels[index].user
-        self.coordinatorDelegate?.didSelect(user: user)
+
+    func didSelectRow(at indexPath: IndexPath) {
+        coordinatorDelegate?.didSelect(username: userViewModels[indexPath.row].user.username)
     }
 
 }

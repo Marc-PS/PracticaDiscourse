@@ -9,28 +9,26 @@ import UIKit
 
 class UserCell: UITableViewCell {
     
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet var username: UILabel!
+    @IBOutlet var userName: UILabel!
+    @IBOutlet var userImage: UIImageView!
     
     var viewModel: UserCellViewModel? {
         didSet {
-            self.avatar.image = viewModel?.userAvatar
-            self.username.text = viewModel?.userUsername
-            self.name.text = viewModel?.userName
+            guard let viewModel = viewModel else { return }
+            viewModel.viewDelegate = self
+            
+            self.userName.text = viewModel.userName
+            self.username.text = viewModel.username
+            self.userImage.image = viewModel.userImage
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+}
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        self.avatar.image = nil
-        self.username.text = nil
-        self.name.text = nil
+extension UserCell: UserCellViewModelViewDelegate {
+    func userImageFetched() {
+        self.userImage.image = viewModel?.userImage
+        setNeedsLayout()
     }
-    
 }
 

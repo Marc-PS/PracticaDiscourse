@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 enum SessionAPIError: Error {
-    case emptyData
+    case httpError(Int)
+    case apiError(ApiError)
 }
 
 final class SessionAPI {
@@ -24,32 +25,29 @@ final class SessionAPI {
         let request = request.requestWithBaseURL()
         
         let task = session.dataTask(with: request) { data, response, error in
-            if let error = error {
-                DispatchQueue.main.async {
-                    completion(.failure(error))
+            // Early exit si la respuesta tiene código de error
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 400 && httpResponse.statusCode < 500 {
+                if let data = data {
+                    do {
+                        let model = try JSONDecoder().decode(ApiError.self, from: data)
+                        DispatchQueue.main.async {
+                            completion(.failure(SessionAPIError.apiError(model)))
+                        }
+                    } catch {
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(.failure(SessionAPIError.httpError(httpResponse.statusCode)))
+                    }
                 }
                 return
             }
-            
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 400, let data = data {
-                do {
-                    let serverError = try JSONDecoder().decode(DiscourseAPIError.self, from: data)
-                    let errorString = serverError.errors?.joined(separator: ", ") ?? "Unknown error"
-                    let domainError = NSError(domain: "request", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: errorString])
-                    DispatchQueue.main.async {
-                        completion(.failure(domainError))
-                    }
-                    return
-                } catch {
-                    let errorDecodingError: NSError = NSError(domain: "request", code: 0, userInfo: [NSLocalizedDescriptionKey: "Error decoding the error"])
-                    DispatchQueue.main.async {
-                        completion(.failure(errorDecodingError))
-                    }
-                    return
-                }
-            }
-            
-            if let data = data {
+
+            // Si vuelven datos, los intentamos decodificar
+            if let data = data, data.count > 0 {
                 do {
                     let model = try JSONDecoder().decode(T.Response.self, from: data)
                     DispatchQueue.main.async {
@@ -61,12 +59,14 @@ final class SessionAPI {
                     }
                 }
             } else {
+                // Retornamos en el caso success
                 DispatchQueue.main.async {
                     completion(.success(nil))
                 }
             }
         }
         task.resume()
+        
     }
     
     func fetchImage(imageURL: URL, completion: @escaping (_ image: UIImage)-> ()) {
@@ -85,7 +85,7 @@ final class SessionAPI {
     }
 }
 
-struct DiscourseAPIError: Codable {
+struct ApiError: Codable {
     let action: String?
     let errors: [String]?
 }

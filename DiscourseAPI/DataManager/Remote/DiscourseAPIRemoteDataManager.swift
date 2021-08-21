@@ -13,8 +13,7 @@ protocol DiscourseAPIRemoteDataManager {
     func deleteTopic(id: Int, completion: @escaping (Result<DeleteTopicResponse?, Error>) -> ())
     func addNewTopic(title: String, raw: String, completion: @escaping (Result<AddNewTopicResponse?, Error>) -> ())
     func fetchCategories(completion: @escaping (Result<CategoriesResponse?, Error>) -> ())
-    func fetchUsers(completion: @escaping (Result<UserListResponse?, Error>)->())
-    func fetchSingleUser(userName: String, completion: @escaping (Result<SingleUserResponse?, Error>)->())
-    func updateUser(nameUser: String, newName: String, completion: @escaping(Result<SingleUserResponse?, Error>) ->())
-    func fetchUserImage(imageURL: String, completion: @escaping (_ image: UIImage)->())
+    func fetchAllUsers(completion: @escaping (Result<UsersResponse?, Error>) -> ())
+    func fetchUser(username: String, completion: @escaping (Result<UserResponse?, Error>) -> ())
+    func updateUserName(username: String, name: String, completion: @escaping (Result<UpdateUserNameResponse?, Error>) -> ())
 }

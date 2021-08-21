@@ -7,30 +7,33 @@
 
 import UIKit
 
+protocol UserCellViewModelViewDelegate: AnyObject {
+    func userImageFetched()
+}
+
 class UserCellViewModel {
+    weak var viewDelegate: UserCellViewModelViewDelegate?
     let user: User
-    var userAvatar: UIImage?
-    var userUsername: String?
-    var userName: String?
+    let userName: String?
+    let username: String?
+    var userImage: UIImage?
     
-    init(user: User, userAvatar: String, userUsername: String, userName: String) {
+    init(user: User) {
         self.user = user
-        self.fetchUserImage(imageUrl: user.avatarTemplate)
-        self.userUsername = user.username
-        self.userName = user.name
-    }
-    
-    func fetchUserImage(imageUrl: String){
+
+        userName = user.name
+        username = user.username
         
-        let sanatizedUrl = imageUrl.replacingOccurrences(of: "{size}", with: "60")
-        
-        let request = UserImageRequest(imageURL: sanatizedUrl)
-        guard let url = request.requestWithBaseURL().url else { return }
-        let networkService = SessionAPI()
-        networkService.fetchImage(imageURL: url) { (image) in
-            self.userAvatar = image
+
+        var imageStringURL = "https://mdiscourse.keepcoding.io"
+        imageStringURL.append(user.avatarTemplate.replacingOccurrences(of: "{size}", with: "100"))
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            if let url = URL(string: imageStringURL), let data = try? Data(contentsOf: url) {
+                self?.userImage = UIImage(data: data)
+                DispatchQueue.main.async {
+                    self?.viewDelegate?.userImageFetched()
+                }
+            }
         }
     }
-    
-    
 }

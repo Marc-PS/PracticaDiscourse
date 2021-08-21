@@ -10,42 +10,36 @@ import UIKit
 class UsersCoordinator: Coordinator {
     let presenter: UINavigationController
     let usersDataManager: UsersDataManager
-    //let userDetailDataManager: UserDetailDataManager
+    let userDataManager: UserDataManager
     
-    init(presenter: UINavigationController, usersDataManager: UsersDataManager) {
+    init(presenter: UINavigationController, usersDataManager: UsersDataManager, userDataManager: UserDataManager) {
         
         self.presenter = presenter
         self.usersDataManager = usersDataManager
-       //self.topicDetailDataManager = topicDetailDataManager
+        self.userDataManager = userDataManager
     }
     
     override func start() {
-        let usersViewModel = UsersViewModel(usersDataManager: self.usersDataManager)
-        usersViewModel.coordinatorDelegate = self
-        let usersViewController = UsersViewController(viewModel: usersViewModel)
-        usersViewController.title = NSLocalizedString("Users", comment: "")
+        let usersViewModel = UsersViewModel(usersDataManager: usersDataManager)
+        let usersViewController = UsersViewController(usersViewModel: usersViewModel)
         usersViewModel.viewDelegate = usersViewController
-        presenter.pushViewController(usersViewController, animated: true)
+        usersViewModel.coordinatorDelegate = self
+        usersViewController.title = NSLocalizedString("Users", comment: "")
+        presenter.pushViewController(usersViewController, animated: false)
     }
     
     override func finish() {}
 }
 
-extension UsersCoordinator: UsersCoordinatorDelegate {
-    func didSelect(user: User) {
-        //TOD
-//
-//        self.topicDetailDataManager
-//        let topicsDetailViewController = TopicsDet
-//
-//        presenter.pushViewController(topicDetailViewController, animated: false)
-        
+extension UsersCoordinator: UsersViewModelCoordinatorDelegate {
+    func didSelect(username: String) {
+        let userViewModel = UserViewModel(username: username, userDataManager: userDataManager)
+        let usersViewModel = UsersViewModel(usersDataManager: usersDataManager)
+        let usersViewController = UsersViewController(usersViewModel: usersViewModel)
+        let userViewController = UserViewController(viewModel: userViewModel, prueba: usersViewController)
+        userViewModel.viewDelegate = userViewController
+        userViewController.title = NSLocalizedString(username, comment: "")
+        presenter.pushViewController(userViewController, animated: true)
     }
-    
 }
 
-//extension UsersCoordinator: UserDetailCoordinatorDelegate {
-//    func topicDetailBackButtonTapped() {
-//        presenter.popViewController(animated: true)
-//    }
-//}
