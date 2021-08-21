@@ -15,7 +15,7 @@ class UserCell: UITableViewCell {
     
     var viewModel: UserCellViewModel? {
         didSet {
-            self.avatar.image = viewModel?.userAvatar?.toImage()
+            self.avatar.image = viewModel?.userAvatar
             self.username.text = viewModel?.userUsername
             self.name.text = viewModel?.userName
         }
@@ -34,11 +34,3 @@ class UserCell: UITableViewCell {
     
 }
 
-extension String {
-    func toImage() -> UIImage? {
-        if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters){
-            return UIImage(data: data)
-        }
-        return nil
-    }
-}

@@ -13,9 +13,9 @@ class CategoriesViewController: UIViewController {
         let table = UITableView(frame: .zero, style: .grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.dataSource = self
+        table.delegate = self
         table.register(UINib(nibName: "CategoryCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
-        table.estimatedRowHeight = 100
-        table.rowHeight = UITableView.automaticDimension
+        
         return table
     }()
 
@@ -60,28 +60,27 @@ class CategoriesViewController: UIViewController {
 }
 
 extension CategoriesViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.numberOfSections()
-    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows(in: section)
+        return viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryCell, let cellViewModel = self.viewModel.viewCategoryModel(index: indexPath.row) {
-            cell.viewModel = cellViewModel
-            return cell
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as? CategoryCell else { return UITableViewCell()}
         
-        fatalError()
+        let category = viewModel.categories[indexPath.row]
+        cell.configure(category: category)
+        return cell
+        
     }
 }
 
 extension CategoriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        viewModel.didSelectACategory(at: indexPath.row)
     }
 }
 

@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol UsersCoordinatorDelegate: class {
+protocol UsersCoordinatorDelegate: AnyObject {
     func didSelect(user: User)
 }
 
-protocol UsersViewDelegate: class {
+protocol UsersViewDelegate: AnyObject {
     func usersFetched()
     func errorFetchingUsers()
 }

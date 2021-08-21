@@ -15,9 +15,8 @@ class CategoryCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    var viewModel: CategoryCellViewModel? {
-        didSet{
-            self.categoryNameLabel.text = viewModel?.category.name
-        }
+    func configure(category: Category) {
+        self.categoryNameLabel.text = category.name
+    
     }
 }

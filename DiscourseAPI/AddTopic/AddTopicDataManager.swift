@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AddTopicDataManager: class {
+protocol AddTopicDataManager: AnyObject {
     func addTopic(title: String, raw: String, completion: @escaping (Result<AddNewTopicResponse?, Error>) -> ())
 }

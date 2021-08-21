@@ -5,7 +5,7 @@
 //  Created by Marc Perelló Sapiña on 17/1/21.
 //
 
-import Foundation
+import UIKit
 
 protocol DiscourseAPIRemoteDataManager {
     func fetchTopics(completion: @escaping (Result<LatestTopicsResponse?, Error>) -> ())
@@ -16,4 +16,5 @@ protocol DiscourseAPIRemoteDataManager {
     func fetchUsers(completion: @escaping (Result<UserListResponse?, Error>)->())
     func fetchSingleUser(userName: String, completion: @escaping (Result<SingleUserResponse?, Error>)->())
     func updateUser(nameUser: String, newName: String, completion: @escaping(Result<SingleUserResponse?, Error>) ->())
+    func fetchUserImage(imageURL: String, completion: @escaping (_ image: UIImage)->())
 }

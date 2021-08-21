@@ -68,6 +68,21 @@ final class SessionAPI {
         }
         task.resume()
     }
+    
+    func fetchImage(imageURL: URL, completion: @escaping (_ image: UIImage)-> ()) {
+        
+        DispatchQueue.global(qos: .utility).async {
+            if let data = try? Data(contentsOf: imageURL) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        completion(image)
+                    }
+                   
+                }
+            }
+        }
+        
+    }
 }
 
 struct DiscourseAPIError: Codable {

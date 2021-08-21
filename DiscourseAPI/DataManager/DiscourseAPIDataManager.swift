@@ -5,7 +5,7 @@
 //  Created by Marc Perelló Sapiña on 17/1/21.
 //
 
-import Foundation
+import UIKit
 
 class DiscourseAPIDataManager {
     let localDataManager: DiscourseAPILocalDataManager
@@ -62,4 +62,9 @@ extension DiscourseAPIDataManager: UsersDataManager {
         remoteDataManager.updateUser(nameUser: nameUser, newName: newName, completion: completion)
 
     }
+    
+    func fetchUserImage(imageURL: String, completion: @escaping (UIImage) -> ()) {
+        remoteDataManager.fetchUserImage(imageURL: imageURL, completion: completion)
+    }
+
 }

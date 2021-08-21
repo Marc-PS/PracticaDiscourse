@@ -11,6 +11,6 @@ enum TopicsDataManagerError: Error {
     case unknown
 }
 
-protocol TopicsDataManager: class {
+protocol TopicsDataManager: AnyObject {
     func fetchTopics(completion: @escaping (Result<LatestTopicsResponse?, Error>) -> ())
 }

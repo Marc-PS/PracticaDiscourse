@@ -30,7 +30,7 @@ struct User: Codable {
     let id: Int
     let username, name, avatarTemplate, lastPostedAt: String
     let lastSeenAt, createdAt: String
-    let canEdit, canEditUsername, canEditEmail, canEditName: Bool
+    let canEdit, canEditUsername, canEditEmail, canEditName: Bool?
     
 
 

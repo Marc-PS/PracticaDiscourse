@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TopicDetailDataManager: class {
+protocol TopicDetailDataManager: AnyObject {
     func fetchTopic(id: Int, completion: @escaping (Result<SingleTopicResponse?, Error>) -> ())
     
     func deleteTopic(id: Int, completion: @escaping (Result<DeleteTopicResponse?, Error>) -> ())

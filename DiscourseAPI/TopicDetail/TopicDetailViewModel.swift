@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol TopicDetailCoordinatorDelegate: class {
+protocol TopicDetailCoordinatorDelegate: AnyObject {
     func topicDetailBackButtonTapped()
 }
 
-protocol TopicDetailViewDelegate: class {
+protocol TopicDetailViewDelegate: AnyObject {
     func topicDetailFetched()
     func errorFetchingTopicDetail()
     func didDeleteTopic()

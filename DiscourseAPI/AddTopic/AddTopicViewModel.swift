@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol AddTopicCoordinatorDelegate: class {
+protocol AddTopicCoordinatorDelegate: AnyObject {
     func addTopicCancelButtonTapped()
     func topicSuccessfullyAdded()
 }
 
-protocol AddTopicViewDelegate: class {
+protocol AddTopicViewDelegate: AnyObject {
     func errorAddingTopic()
 }
 

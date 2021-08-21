@@ -5,7 +5,7 @@
 //  Created by Marc Perelló Sapiña on 17/1/21.
 //
 
-import Foundation
+import UIKit
 
 class DiscourseAPIRemoteDataManagerImpl: DiscourseAPIRemoteDataManager {
    
@@ -70,6 +70,13 @@ class DiscourseAPIRemoteDataManagerImpl: DiscourseAPIRemoteDataManager {
         session.send(request: request) { result in
             completion(result)
         }
+    }
+    
+    func fetchUserImage(imageURL: String, completion: @escaping (UIImage) -> ()) {
+        let  request = UserImageRequest(imageURL: imageURL)
+        guard let url = request.requestWithBaseURL().url else {return}
+        
+        self.session.fetchImage(imageURL: url, completion: completion)
     }
     
 

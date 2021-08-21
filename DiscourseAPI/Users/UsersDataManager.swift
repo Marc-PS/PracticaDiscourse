@@ -5,7 +5,7 @@
 //  Created by Marc Perelló Sapiña on 20/1/21.
 //
 
-import Foundation
+import UIKit
 
 enum UsersDataManagerError: Error {
     case unknown
@@ -13,4 +13,5 @@ enum UsersDataManagerError: Error {
 
 protocol UsersDataManager {
     func fetchUsers(completion: @escaping (Result<UserListResponse?, Error>) -> ())
+    func fetchUserImage(imageURL: String, completion: @escaping (_ image: UIImage)->())
 }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol TopicsCoordinatorDelegate: class {
+protocol TopicsCoordinatorDelegate: AnyObject {
     func didSelect(topic: Topic)
     func topicsPlusButtonTapped()
 }
 
-protocol TopicsViewDelegate: class {
+protocol TopicsViewDelegate: AnyObject {
     func topicsFetched()
     func errorFetchingTopics()
 }
