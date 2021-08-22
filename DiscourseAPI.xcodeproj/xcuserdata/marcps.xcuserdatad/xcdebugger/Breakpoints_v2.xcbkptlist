@@ -128,8 +128,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "SessionAPI"
-            landmarkType = "3">
+            landmarkName = "session"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - 3adf7886e14e01e1"

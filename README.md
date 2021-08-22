@@ -1,8 +1,6 @@
 # Practica Discourse
 
-Comentarios:
-
-Segundo intento.
+Subo práctica ya funcional con todo lo requerido en el encunciado.
 
 Saludos,
 Marc

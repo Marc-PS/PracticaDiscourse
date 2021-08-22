@@ -27,7 +27,7 @@ class TopicDetailViewModel {
     let topic: Topic
     var topicDetailID: String?
     var topicDetailTitle: String?
-    var numberOfPosts: Int?
+    var numberOfPosts: String?
     var isDeletable = true
     let id: Int
     
@@ -47,7 +47,7 @@ class TopicDetailViewModel {
                     
                     self?.topicDetailID = response.id.description
                     self?.topicDetailTitle = response.title
-                    self?.numberOfPosts = response.numberOfPosts
+                    self?.numberOfPosts = response.numberOfPosts.description
    
                     self?.isDeletable = !(response.details.canDelete ?? false)
                     self?.detailViewDelegate?.topicDetailFetched()

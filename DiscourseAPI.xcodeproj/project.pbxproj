@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9D3AC2BF25BA3B6600CBB757 /* DeleteTopicResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3AC2BE25BA3B6600CBB757 /* DeleteTopicResponse.swift */; };
 		9D3AC2C225BA3BC900CBB757 /* DeleteTopicRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3AC2C125BA3BC900CBB757 /* DeleteTopicRequest.swift */; };
-		9D3AC2C825BA476000CBB757 /* TopicDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3AC2C725BA476000CBB757 /* TopicDetailView.xib */; };
 		9D51D27325BD4C0B0059E9E1 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51D27225BD4C0B0059E9E1 /* UserRequest.swift */; };
 		9D51D27D25BD4E0B0059E9E1 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51D27C25BD4E0B0059E9E1 /* UserResponse.swift */; };
 		9D51D28025BD4FF10059E9E1 /* UpdateUserNameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D51D27F25BD4FF10059E9E1 /* UpdateUserNameRequest.swift */; };
@@ -74,7 +73,6 @@
 /* Begin PBXFileReference section */
 		9D3AC2BE25BA3B6600CBB757 /* DeleteTopicResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTopicResponse.swift; sourceTree = "<group>"; };
 		9D3AC2C125BA3BC900CBB757 /* DeleteTopicRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTopicRequest.swift; sourceTree = "<group>"; };
-		9D3AC2C725BA476000CBB757 /* TopicDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicDetailView.xib; sourceTree = "<group>"; };
 		9D51D27225BD4C0B0059E9E1 /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		9D51D27C25BD4E0B0059E9E1 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		9D51D27F25BD4FF10059E9E1 /* UpdateUserNameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateUserNameRequest.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				9DA9FFA325B75744000C8C75 /* TopicDetailViewModel.swift */,
 				9DA9FFA725B758D7000C8C75 /* TopicDetailViewController.swift */,
 				9DA9FF8E25B5DE86000C8C75 /* TopicDetailDataManager.swift */,
-				9D3AC2C725BA476000CBB757 /* TopicDetailView.xib */,
 			);
 			path = TopicDetail;
 			sourceTree = "<group>";
@@ -408,7 +405,6 @@
 				9DA9FF7525B4CD55000C8C75 /* TopicCell.xib in Resources */,
 				9D7A589825BC474E0047EC97 /* AddTopicView.xib in Resources */,
 				9DA9FF2E25B4A228000C8C75 /* Assets.xcassets in Resources */,
-				9D3AC2C825BA476000CBB757 /* TopicDetailView.xib in Resources */,
 				9DA9FFCE25B8A77A000C8C75 /* CategoryCell.xib in Resources */,
 				9DA9FFE725B8CEE8000C8C75 /* UserCell.xib in Resources */,
 			);

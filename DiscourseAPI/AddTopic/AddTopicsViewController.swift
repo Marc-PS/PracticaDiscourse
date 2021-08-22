@@ -54,7 +54,7 @@ class AddTopicViewController: UIViewController {
     
     private func setupTextView(){
         
-        topicRawText.text = "Enter you topic description..."
+        topicRawText.text = "Enter your description with over 25 characters..."
         topicRawText.textColor = .systemGray
         topicRawText.delegate = self
     }
