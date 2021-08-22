@@ -32,6 +32,7 @@ class TopicsViewController: UIViewController {
     }
     
     override func loadView() {
+        super.loadView()
         view = UIView()
         
         view.addSubview(tableView)
@@ -49,7 +50,7 @@ class TopicsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.viewWasLoaded()
+        viewModel.fetchTopicsAndReloadUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,6 +97,10 @@ extension TopicsViewController: UITableViewDelegate {
 extension TopicsViewController: TopicsViewDelegate {
     func topicsFetched() {
         tableView.reloadData()
+    }
+    
+    func didCreatedNewTopic() {
+        viewModel.didCreateNewPost()
     }
     
     func errorFetchingTopics() {

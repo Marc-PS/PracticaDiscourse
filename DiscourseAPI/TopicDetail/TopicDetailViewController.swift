@@ -14,7 +14,10 @@ class TopicDetailViewController: UIViewController {
     @IBOutlet weak var topicIDLabel: UILabel!
     @IBOutlet weak var topicTitleLabel: UILabel!
     @IBOutlet weak var numberOfPostsLabel: UILabel!
-    @IBOutlet weak var deleteTopicButton: UIButton!
+    
+    @IBAction func deleteTopicButton(_ sender: Any) {
+        topicDetailViewModel.deleteButtonTapped()
+    }
     
     init(topicDetailViewModel: TopicDetailViewModel) {
         self.topicDetailViewModel = topicDetailViewModel
@@ -46,14 +49,19 @@ class TopicDetailViewController: UIViewController {
         showAlert(alertMessage)
     }
     
-    @IBAction func deleteTapped(_ sender: UIButton) {
-        if let id = Int(topicIDLabel.text!) {
-            topicDetailViewModel.deleteButtonTapped(id: id)
-        }
+    fileprivate func showErrorDeletingTopic() {
+        let alertMessage: String = NSLocalizedString("Error deleting topic\nPlease try again later", comment: "")
+        showAlert(alertMessage)
     }
+    
+
 }
 
 extension TopicDetailViewController: TopicDetailViewDelegate {
+    func errorDeletingTopic() {
+        showErrorDeletingTopic()
+    }
+    
     func didDeleteTopic() {
         topicDetailViewModel.coordinatorDelegate?.topicDetailBackButtonTapped()
     }
@@ -62,10 +70,8 @@ extension TopicDetailViewController: TopicDetailViewDelegate {
         self.topicIDLabel.text = topicDetailViewModel.topicDetailID
         self.topicTitleLabel.text = topicDetailViewModel.topicDetailTitle
         self.numberOfPostsLabel.text = topicDetailViewModel.numberOfPosts?.description
-        if let deletable = topicDetailViewModel.isDeletable{
-            self.deleteTopicButton.setTitleColor(.red, for: .normal)
-            self.deleteTopicButton.isEnabled = deletable
-        }
+        
+        
     }
     
     func errorFetchingTopicDetail() {

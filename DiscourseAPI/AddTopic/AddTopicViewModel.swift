@@ -13,11 +13,12 @@ protocol AddTopicCoordinatorDelegate: AnyObject {
 }
 
 protocol AddTopicViewDelegate: AnyObject {
-    func errorAddingTopic()
+    func didCreateNewTopic()
+    func didFailToCreateTopic(error: String)
 }
 
 class AddTopicViewModel {
-    weak var addTopicViewDelegate: AddTopicViewDelegate?
+    var addTopicViewDelegate: AddTopicViewDelegate?
     var coordinatorDelegate: AddTopicCoordinatorDelegate?
     let dataManager: AddTopicDataManager
     
@@ -34,8 +35,8 @@ class AddTopicViewModel {
             switch result {
                 case .success(_):
                     self.coordinatorDelegate?.topicSuccessfullyAdded()
-                case .failure:
-                    self.addTopicViewDelegate?.errorAddingTopic()
+                case .failure(let error):
+                    self.addTopicViewDelegate?.didFailToCreateTopic(error: error.localizedDescription)
             }
         }
     }

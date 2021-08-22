@@ -8,6 +8,7 @@
 import UIKit
 
 class TopicsCoordinator: Coordinator, TopicDetailCoordinatorDelegate {
+    
 
     let presenter: UINavigationController
     let topicsDataManager: TopicsDataManager
@@ -42,17 +43,20 @@ class TopicsCoordinator: Coordinator, TopicDetailCoordinatorDelegate {
     func topicDetailBackButtonTapped() {
         self.presenter.popViewController(animated: true)
     }
+    
+    func topicSuccessfullyDeleted() {
+        presenter.popViewController(animated: true)
+        topicsViewModel?.topicWasDeleted()
+    }
 }
-
-
 
 
 extension TopicsCoordinator: TopicsCoordinatorDelegate {
     func didSelect(topic: Topic) {
-        let detailViewModel = TopicDetailViewModel(topic: topic, topicDetailDataManager: self.topicDetailDataManager)
-        detailViewModel.coordinatorDelegate = self
-        let detailController = TopicDetailViewController(topicDetailViewModel: detailViewModel)
-        detailViewModel.detailViewDelegate = detailController
+        let topicDetailViewModel = TopicDetailViewModel(topic: topic, topicDetailDataManager: topicDetailDataManager, id: topic.id)
+        topicDetailViewModel.coordinatorDelegate = self
+        let detailController = TopicDetailViewController(topicDetailViewModel: topicDetailViewModel)
+        topicDetailViewModel.detailViewDelegate = detailController
         presenter.pushViewController(detailController, animated: true)
     }
     
@@ -66,7 +70,7 @@ extension TopicsCoordinator: TopicsCoordinatorDelegate {
             
             addTopicCoordinator.finish()
             self.removeChildCoordinator(addTopicCoordinator)
-            self.topicsViewModel?.newTopicWasCreated()
+            self.topicsViewModel?.didCreateNewPost()
         }
     }
 }

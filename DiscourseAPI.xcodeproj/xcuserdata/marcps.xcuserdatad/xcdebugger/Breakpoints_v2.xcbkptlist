@@ -128,8 +128,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "session"
-            landmarkType = "24">
+            landmarkName = "SessionAPI"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "35495AF4-910B-4F4A-A0BB-5BB63213B47F - 3adf7886e14e01e1"
@@ -220,22 +220,6 @@
             filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "start()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7156472C-9F92-43C0-823F-E0F089FBC1EE"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "start()"
@@ -245,7 +229,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "50B6AC6A-E31A-4895-9B01-B8ACE0CD35DF"
+            uuid = "7156472C-9F92-43C0-823F-E0F089FBC1EE"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -261,7 +245,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C8E4B3ED-4229-48E6-AE6E-5D9FEF2E22CF"
+            uuid = "50B6AC6A-E31A-4895-9B01-B8ACE0CD35DF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -277,7 +261,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1F91CCCF-C30B-4C22-96FD-1B7AF2EF18C7"
+            uuid = "C8E4B3ED-4229-48E6-AE6E-5D9FEF2E22CF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -293,7 +277,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7D5ED98E-CDBD-467C-B423-DCB7A483B6C1"
+            uuid = "1F91CCCF-C30B-4C22-96FD-1B7AF2EF18C7"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -309,7 +293,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "97F1384A-1526-4FB1-9623-2DA54749251D"
+            uuid = "7D5ED98E-CDBD-467C-B423-DCB7A483B6C1"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -325,6 +309,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "97F1384A-1526-4FB1-9623-2DA54749251D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiscourseAPI/Coordinator/TopicsCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "start()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "3234DED6-3195-4D69-8666-224369F4732E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -332,8 +332,8 @@
             filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "submitNewTopic(title:raw:)"
             landmarkType = "7">
             <Locations>
@@ -380,8 +380,8 @@
             filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "submitNewTopic(title:raw:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -396,8 +396,8 @@
             filePath = "DiscourseAPI/AddTopic/AddTopicViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "submitNewTopic(title:raw:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -28,7 +28,9 @@ class TopicsViewModel {
         self.topicsDataManager = topicsDataManager
     }
     
-    func viewWasLoaded() {
+    func fetchTopicsAndReloadUI() {
+        self.topicsViewModel.removeAll()
+        
         topicsDataManager.fetchTopics { [weak self] result in
             switch result{
                 case .success(let response):
@@ -67,7 +69,11 @@ class TopicsViewModel {
         coordinatorDelegate?.topicsPlusButtonTapped()
     }
     
-    func newTopicWasCreated() {
-        viewWasLoaded()
+    func didCreateNewPost(){
+        fetchTopicsAndReloadUI()
+    }
+    
+    func topicWasDeleted() {
+        fetchTopicsAndReloadUI()
     }
 }

@@ -9,12 +9,13 @@ import Foundation
 
 protocol TopicDetailCoordinatorDelegate: AnyObject {
     func topicDetailBackButtonTapped()
+    func topicSuccessfullyDeleted()
 }
 
 protocol TopicDetailViewDelegate: AnyObject {
     func topicDetailFetched()
     func errorFetchingTopicDetail()
-    func didDeleteTopic()
+    func errorDeletingTopic()
 }
 
 class TopicDetailViewModel {
@@ -27,49 +28,48 @@ class TopicDetailViewModel {
     var topicDetailID: String?
     var topicDetailTitle: String?
     var numberOfPosts: Int?
-    var isDeletable: Bool?
+    var isDeletable = true
+    let id: Int
     
-    init(topic: Topic, topicDetailDataManager: TopicDetailDataManager) {
+    init(topic: Topic, topicDetailDataManager: TopicDetailDataManager, id: Int) {
         self.topic = topic
+        self.id = id
         self.topicDetailDataManager = topicDetailDataManager
         
         
     }
     
     func viewDidLoad() {
-        let id = self.topic.id
-        topicDetailDataManager.fetchTopic(id: id, completion: { (result) in
+        topicDetailDataManager.fetchTopic(id: id) { [weak self] (result) in
             switch result {
                 case .success(let response):
-                    self.topicDetailID = response?.id.description
-                    self.topicDetailTitle = response?.title
-                    self.numberOfPosts = response?.numberOfPosts
+                    guard let response = response else { return }
+                    
+                    self?.topicDetailID = response.id.description
+                    self?.topicDetailTitle = response.title
+                    self?.numberOfPosts = response.numberOfPosts
    
-                    if let deletable = response?.details.isDeletable{
-                        self.isDeletable = deletable
-                    } else {
-                        self.isDeletable = false
-                    }
-                    self.detailViewDelegate?.topicDetailFetched()
+                    self?.isDeletable = !(response.details.canDelete ?? false)
+                    self?.detailViewDelegate?.topicDetailFetched()
                 case .failure(_):
                     print("Failure getting topics details")
+                    self?.detailViewDelegate?.errorFetchingTopicDetail()
             }
-        })
+        }
     }
     
     func backButtonTapped() {
         coordinatorDelegate?.topicDetailBackButtonTapped()
     }
     
-    func deleteButtonTapped(id: Int) {
-        topicDetailDataManager.deleteTopic(id: id, completion: { (result) in
+    func deleteButtonTapped() {
+        topicDetailDataManager.deleteTopic(id: id) { [weak self] (result) in
             switch result {
-                case .success:
-                    self.detailViewDelegate?.didDeleteTopic()
-                    self.backButtonTapped()
-                case .failure:
-                    print("Error deleting topic")
+            case .success:
+                self?.coordinatorDelegate?.topicSuccessfullyDeleted()
+            case .failure:
+                self?.detailViewDelegate?.errorDeletingTopic()
             }
-        })
+        }
     }
 }

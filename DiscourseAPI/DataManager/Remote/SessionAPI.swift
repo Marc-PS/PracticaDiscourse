@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 enum SessionAPIError: Error {
-    case httpError(Int)
     case apiError(ApiError)
+    case httpError(Int)
 }
 
 final class SessionAPI {
@@ -26,7 +26,7 @@ final class SessionAPI {
         
         let task = session.dataTask(with: request) { data, response, error in
             // Early exit si la respuesta tiene código de error
-            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 400 && httpResponse.statusCode < 500 {
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode >= 400 {
                 if let data = data {
                     do {
                         let model = try JSONDecoder().decode(ApiError.self, from: data)

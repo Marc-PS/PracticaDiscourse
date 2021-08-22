@@ -12,6 +12,7 @@ class AddTopicViewController: UIViewController {
     let viewModel: AddTopicViewModel
     
     @IBOutlet weak var addTopicText: UITextField!
+    @IBOutlet weak var topicRawText: UITextView!
     
     init(viewModel: AddTopicViewModel) {
         self.viewModel = viewModel
@@ -24,7 +25,7 @@ class AddTopicViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-          
+        setupTextView()
     }
     
     
@@ -48,8 +49,15 @@ class AddTopicViewController: UIViewController {
         if !title.isEmpty && !raw.isEmpty {
             viewModel.submitNewTopic(title: title, raw: raw)
         }
+        
     }
     
+    private func setupTextView(){
+        
+        topicRawText.text = "Enter you topic description..."
+        topicRawText.textColor = .systemGray
+        topicRawText.delegate = self
+    }
     
     fileprivate func showErrorAddingTopicAlert() {
         let message = NSLocalizedString("Error adding topic\nPlease try again later", comment: "")
@@ -57,8 +65,24 @@ class AddTopicViewController: UIViewController {
     }
 }
 
+extension AddTopicViewController: UITextViewDelegate{
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.systemGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+}
+
 extension AddTopicViewController: AddTopicViewDelegate {
-    func errorAddingTopic() {
-        showErrorAddingTopicAlert()
+    func didCreateNewTopic() {
+        self.showAlert("New topic created successfully", "New Topic", "OK")
+        self.viewModel.coordinatorDelegate?.topicSuccessfullyAdded()
+    }
+    
+    func didFailToCreateTopic(error: String) {
+        self.showAlert(error, "Error creating Topic", "OK")
     }
 }

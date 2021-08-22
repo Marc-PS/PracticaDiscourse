@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicDetailViewController" customModule="DiscourseAPI" customModuleProvider="target">
             <connections>
-                <outlet property="deleteTopicButton" destination="MWf-FZ-UvD" id="Dzb-6C-llW"/>
                 <outlet property="numberOfPostsLabel" destination="gOu-iS-XxL" id="fyM-9G-bzg"/>
                 <outlet property="topicIDLabel" destination="kFZ-F0-aBl" id="Z8P-Nd-UKH"/>
                 <outlet property="topicTitleLabel" destination="dCZ-qV-VWA" id="MGx-ay-TJo"/>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="87" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-Gb-tXh">
-                    <rect key="frame" x="98" y="272" width="218.5" height="352.5"/>
+                    <rect key="frame" x="98" y="330.5" width="218.5" height="235.5"/>
                     <subviews>
                         <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="jll-Tw-d6o">
                             <rect key="frame" x="0.0" y="0.0" width="218.5" height="20.5"/>
@@ -76,9 +75,12 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWf-FZ-UvD">
-                            <rect key="frame" x="0.0" y="322.5" width="218.5" height="30"/>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWf-FZ-UvD">
+                            <rect key="frame" x="0.0" y="235.5" width="218.5" height="0.0"/>
                             <state key="normal" title="Delete topic"/>
+                            <connections>
+                                <action selector="deleteTopicButton:" destination="-1" eventType="touchUpInside" id="idN-bf-6vR"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

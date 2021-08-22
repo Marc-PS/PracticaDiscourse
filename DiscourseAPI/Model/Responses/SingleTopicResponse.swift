@@ -10,7 +10,7 @@ import Foundation
 struct SingleTopicResponse: Codable {
     let id: Int
     let title: String
-    let details: PostDetails
+    let details: Details
     let numberOfPosts: Int
     
     enum CodingKeys: String, CodingKey {
@@ -21,10 +21,10 @@ struct SingleTopicResponse: Codable {
     }
 }
 
-struct PostDetails: Codable{
-    let isDeletable: Bool?
+struct Details: Codable{
+    let canDelete: Bool?
     
     enum CodingKeys: String, CodingKey {
-        case isDeletable = "can_delete"
+        case canDelete = "can_delete"
     }
 }
